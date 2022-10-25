@@ -8,7 +8,7 @@ class User(db.Model):
     id = db.Column(db.Integer, primary_key = True)
     username = db.Column(db.String(40), unique = True, nullable = False)
     email = db.Column(db.String(40), unique = True, nullable = False)
-    password = db.Column(db.String(40), nullable = False)
+    password = db.Column(db.String(300), nullable = False)
     created_at= db.Column(db.DateTime, default = datetime.now())
     updated_at= db.Column(db.DateTime, default = datetime.now())
     cats = db.relationship('Cats', backref = "user")
